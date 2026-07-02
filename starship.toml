@@ -1,7 +1,7 @@
 format = """
 $os\
 $username\
-$direcotry\
+$directory\
 $git_branch\
 $git_status\
 $all\
