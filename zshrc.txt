@@ -1,0 +1,26 @@
+"$HOME/.local/bin/env" export PATH="$HOME/.npm-global/bin:$PATH"
+
+# 1. Initialize Zsh's default completion engine (REQUIRED for completion strategy) autoload -Uz compinit && compinit
+
+fastfetch
+
+# 2. History Settings
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+
+# 3. Configure autosuggestions BEFORE sourcing the plugin
+# This tells it to use history first, and system commands/paths second
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# 4. Source the plugin at the very end
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# initialize starship (termal prompt)
+eval "$(starship init zsh)"
+
+# point starship too look for this config file
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
