@@ -1,0 +1,47 @@
+format = """
+$os\
+$username\
+$direcotry\
+$git_branch\
+$git_status\
+$all\
+$fill\
+$cmd_duration\
+$line_break\
+$character\
+"""
+
+[fill]
+symbol = " "
+
+[os]
+disabled = false
+# Changed to bright yellow so the Arch logo pops beautifully against purple
+style = "bold bright-blue"
+
+[os.symbols]
+Arch = " 󰣇 " 
+[directory]
+# Cyan and purple look incredible together
+style = "bold bright-cyan"
+read_only = " 󰌾"
+
+[username]
+# This ensures it shows your name all the time
+show_always = true
+style_user = "bold bright-yellow"
+format = " [$user]($style) "
+
+[git_branch]
+symbol = " "
+# Changed from purple to bright green so it doesn't turn invisible
+style = "bold bright-green"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style)"
+style = "bold bright-red"
+
+[character]
+success_symbol = "[ ❯](bold bright-green)"
+error_symbol = "[ ❯](bold bright-red)"
